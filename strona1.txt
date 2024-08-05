@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Cele Sportowe i Plan Treningowy</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff;
+        }
+        section {
+            padding: 20px 10%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        h2 {
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .goal, .plan {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .goal p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .plan-table th, .plan-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .plan-table th {
+            background-color: #333;
+            color: white;
+        }
+        .plan-table td {
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10%;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .emoji-container {
+            position: relative;
+            display: inline-block;
+        }
+        .tears {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 100px;
+            pointer-events: none;
+        }
+        .tear {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: rgba(0, 0, 255, 0.7);
+            border-radius: 60% 60% 40% 40%;
+            transform: rotate(135deg);
+            animation: fall 2s infinite;
+        }
+        .tear:nth-child(1) {
+            left: 0%;
+            animation-delay: 0s;
+        }
+        .tear:nth-child(2) {
+            left: 20%;
+            animation-delay: 0.4s;
+        }
+        .tear:nth-child(3) {
+            left: 40%;
+            animation-delay: 0.8s;
+        }
+        .tear:nth-child(4) {
+            left: 60%;
+            animation-delay: 1.2s;
+        }
+        .tear:nth-child(5) {
+            left: 80%;
+            animation-delay: 1.6s;
+        }
+        @keyframes fall {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+            100% {
+                top: 100px;
+                opacity: 0;
+            }
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #f4f4f4;
+            border-radius: 25px;
+            padding: 10px;
+            margin-top: 20px;
+            position: relative;
+            height: 100px;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #ffdd99;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #87ceeb;
+            width: 19%;
+            border-radius: 25px;
+            position: relative;
+        }
+        .milestone {
+            position: absolute;
+            top: -10px;
+            width: 2px;
+            height: 30px;
+            background-color: #333;
+        }
+        .milestone.start {
+            left: 0;
+        }
+        .milestone.end {
+            right: 0;
+        }
+        .milestone-container {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .milestone-container .point {
+            background-color: #333;
+            width: 2px;
+            height: 30px;
+        }
+        .milestone-label {
+            position: absolute;
+            width: 100%;
+            top: 75%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .milestone-label span {
+            font-size: 0.8em;
+            color: #000;
+        }
+        .milestone-label .start {
+            text-align: left;
+        }
+        .milestone-label .end {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notatnik Sportowy Michała</h1>
+    </header>
+    <section class="container">
+        <h2>Moje Cele Sportowe</h2>
+        <div class="goal">
+            <p>Przebiec 5km bez zatrzymania</p>
+        </div>
+        <div class="goal">
+            <p>Ukończyć półmaraton</p>
+        </div>
+        <div class="goal">
+            <p>Ukończyć triathlon olimpijski</p>
+        </div>
+    </section>
+    <section class="container">
+        <h2>Mój Plan Treningowy</h2>
+        <table class="plan-table">
+            <thead>
+                <tr>
+                    <th>Poniedziałek</th>
+                    <th>Wtorek</th>
+                    <th>Środa</th>
+                    <th>Czwartek</th>
+                    <th>Piątek</th>
+                    <th>Sobota</th>
+                    <th>Niedziela</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lower</td>
+                    <td>Upper</td>
+                    <td>Rower HIIT</td>
+                    <td>Push/Pull</td>
+                    <td>Push/Pull</td>
+                    <td>Rower HIIT</td>
+                    <td rowspan="2">rest JasperSmutek<br><span class="emoji-container"><span class="tears"><span class="tear"></span><span class="tear"></span><span class="tear"></span><span class="tear"></span><span class="tear"></span></span></span></td>
+                </tr>
+                <tr>
+                    <td>Pływanie</td>
+                    <td>Bieganie</td>
+                    <td></td>
+                    <td>Pływanie</td>
+                    <td>Bieganie</td>
+                    <td>Pływanie</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="container">
+        <h2>Postęp w Celu</h2>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="milestone-container">
+                    <div class="milestone start"></div>
+                    <div class="milestone point" style="left: 23.8%;"></div>
+                    <div class="milestone point" style="left: 47.6%;"></div>
+                    <div class="milestone point" style="left: 57.1%;"></div>
+                    <div class="milestone point" style="left: 76.2%;"></div>
+                    <div class="milestone end"></div>
+                </div>
+                <div class="milestone-label">
+                    <span class="start">Początek</span>
+                    <span>5km</span>
+                    <span>10km</span>
+                    <span>12km</span>
+                    <span>16km</span>
+                    <span class="end">Półmaraton</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Michał. Wszystkie prawa zastrzeżone.</p>
+        <p>
+            <a href="https://facebook.com/twoje_konto" target="_blank">Facebook</a> |
+            <a href="https://instagram.com/twoje_konto" target="_blank">Instagram</a> |
+            <a href="https://twitter.com/twoje_konto" target="_blank">Twitter</a>
+        </p>
+    </footer>
+</body>
+</html>
